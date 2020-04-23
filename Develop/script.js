@@ -83,9 +83,18 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
+  passwordFinal = [];
+  passwordCharacters = [];
+  passwordLength = 0;
+  generatedPasswordNumbers = [];
+  
   var password = generatePassword();
-
+ //Test console log
+ console.log(password)
+ console.log(passwordFinal)
+  
   var passwordText = document.querySelector("#password");
+  passwordText.value = "";
   passwordText.value = password;
 
 
