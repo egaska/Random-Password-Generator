@@ -6,16 +6,20 @@ var specialCharacters = "~ ! @ # $ % ^ & * ( ) _ - + = [ ] { } | ; : / ?".split(
 var passwordCharacters = [];
 var generatedPasswordNumbers = [];
 var passwordFinal = [];
+var passwordLength = 0;
 
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // Prompt Questions
-  var passwordLength = prompt("How many characters would you like the password to be? (Please enter an integer)");
-  var lower = confirm("Do you want lowercase characters?");
-  var upper = confirm("Do you want uppercase characters?");
-  var numbers = confirm("Do you want numbers?");
-  var special = confirm("Do you want special characters?");
+
+  while (passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("How many characters would you like the password to be? (Please enter an integer between 8 and 128): ");
+  }
+  var lower = confirm("Do you want lowercase characters?: ");
+  var upper = confirm("Do you want uppercase characters?: ");
+  var numbers = confirm("Do you want numbers?: ");
+  var special = confirm("Do you want special characters?: ");
 
   //If statements to add requested character types
   if (lower === true) {
@@ -72,7 +76,7 @@ function generatePassword() {
 
   //Test Display
   console.log(passwordFinal);
-  return passwordFinal;
+  return passwordFinal.join("");
 }
 
 
