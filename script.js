@@ -27,6 +27,7 @@ function generatePassword() {
     for (let i = 0; i < lowercaseAlphabet.length - 1; i++) {
       passwordCharacters.push(lowercaseAlphabet[i]);
     }
+  }
     //   Test Console Display
     //   console.log("Lowercase: " + passwordCharacters);
 
@@ -54,7 +55,7 @@ function generatePassword() {
     }
     //Test Console Display
     // console.log("Special: " + passwordCharacters);
-  }
+  
 
   // Loop to generate the requested amount of random slots to be entered into the array passwordCharacters.
   for (let i = 1; i < passwordLength; i++) {
